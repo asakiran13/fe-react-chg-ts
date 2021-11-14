@@ -1,13 +1,9 @@
+export type FieldType = 'first_name' | 'last_name' | 'email' | 'date_of_birth' | 'monthly_income' | 'gender' | 'address' | 'contractor';
+
 export interface LenderGetResponse {
   name: string;
   fields: Array<
-    | 'first_name'
-    | 'last_name'
-    | 'email'
-    | 'date_of_birth'
-    | 'monthly_income'
-    | 'gender'
-    | 'address'
+    FieldType
   >;
 }
 
@@ -17,7 +13,7 @@ export interface LenderGetResponseExtended {
 }
 
 export interface LenderFields {
-  name: string;
+  name: FieldType;
   type: string;
   required: boolean;
   options?: Array<string>;
